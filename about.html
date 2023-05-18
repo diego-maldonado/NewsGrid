@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/ffa0d11a06.js" crossorigin="anonymous"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Staatliches&display=swap" rel="stylesheet">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/mobile.css">
+  <!-- We added a media attribute as we only want to call/use mobile.css when the screen no larger than 768px wide -->
+  <!-- NOTE: The media attribute specifies what media or device the linked document is optimized for. 
+  This attribute is used to specify that the target URL is designed for special devices (like iPhone), speech or print media.
+  This attribute can accept several values.
+  Only used if the href attribute is present. -->
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="logo-favicon.ico">
+  <title>About</title>
+</head>
+
+<body>
+  <nav id="main-nav">
+    <div class="container">
+      <img src="img/logo.png" alt="NewsGrid" class="logo">
+      <!-- Social media links/icons -->
+      <div class="social">
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+        <!-- The target attribute specifies where to open the linked document.
+        NOTE: A value of "_blank" opens the linked document in a new window or tab -->
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+        <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+      </div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="current">About</a></li>
+        <!-- Our "current" class is now in the "About" <a> tag (not in the "Home" <a> like in index.html) as we want it to have a red background to signify to the user that they are currently in the about page -->
+      </ul>
+    </div>
+  </nav>
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <!-- The .container class has some padding to keep the content a bit separated from the edges of our screen and also has a max-width Q: why max-width?, margin auto, and overflow hidden -->
+      <div class="page-container">
+        <!-- This will be a Grid container. We'll use the "page-container" on any inner pages, such as the about and article pages-->
+        <article class="card">
+          <!-- This is a Grid item -->
+          <!-- The .card class adds a light background color and padding  -->
+          <h1 class="l-heading">About Our Organization</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis reiciendis ad dolorem esse, aliquam
+            debitis magni quos amet exercitationem iste quam facilis cupiditate quisquam alias sapiente id laudantium
+            sunt architecto. Quibusdam, quis ratione! Amet, repellendus impedit. Consectetur aut corporis quibusdam
+            tenetur nisi nulla culpa beatae possimus, quaerat itaque odit at.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime sit dolore debitis? Explicabo porro
+            doloribus mollitia amet vero itaque numquam animi aliquam atque commodi omnis labore rem maxime facilis,
+            dolore voluptate dicta officiis architecto autem nam iusto odit nobis ad? Saepe ducimus, aspernatur, esse
+            asperiores temporibus accusantium dicta voluptas libero repellendus quod earum assumenda illum quasi
+            suscipit deserunt sequi cumque dolorum explicabo fuga nihil labore unde! Voluptatem nisi doloribus, fuga
+            veritatis eum sunt beatae cum odio magnam culpa ut quasi eius ex, facilis placeat iure fugiat? Magni amet
+            eius ut. Magnam unde praesentium rerum optio molestiae tempora culpa quia quisquam saepe et. Quae, omnis
+            ratione quo modi sit incidunt eligendi nulla voluptates fugit repudiandae voluptatum deleniti doloremque ea
+            totam eaque unde nam? Officia quaerat incidunt quae sed doloremque numquam mollitia omnis modi quidem! Nemo
+            obcaecati possimus rem minima magnam nesciunt quaerat expedita quasi sunt, culpa enim explicabo quo beatae.
+            Corrupti!</p>
+        </article>
+        <aside class="card bg-primary">
+          <h2>Join Our Club</h2>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, sunt.</p>
+          <a href="#" class="btn btn-dark btn-block">Join Now</a>
+        </aside>
+      </div>
+
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer id="main-footer" class="py-2">
+    <div class="container footer-container">
+      <!-- The .container utility class moves everything to the middle and adds some padding -->
+      <!-- The footer-container will be the actual grid container for the footer -->
+      <!-- We'll have 5 div's, and will use CSS Grid to repeat 4 columns, 1 column for the first 4 divs, and span the last div across all 4 columns in the second row -->
+      <div>
+        <img src="img/logo_light.png" alt="NewsGrid">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil, placeat provident! Velit at iste sint
+          voluptates est laudantium praesentium dolore!</p>
+      </div>
+      <div>
+        <h3>Email Newsletter</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        <form>
+          <input type="email" placeholder="Enter Email...">
+          <input type="submit" value="Subscribe" class="btn btn-primary">
+        </form>
+      </div>
+      <div>
+        <h3>Site Links</h3>
+        <ul class="list">
+          <li><a href="#">Help & Support</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Join Our Club</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, nulla.</p>
+        <a href="#" class="btn btn-secondary">Join Now</a>
+      </div>
+      <div>
+        <p>Copyright &copy; 2019, All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

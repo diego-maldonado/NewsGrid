@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/ffa0d11a06.js" crossorigin="anonymous"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Staatliches&display=swap" rel="stylesheet">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/mobile.css">
+  <!-- We added a media attribute as we only want to call/use mobile.css when the screen no larger than 768px wide -->
+  <!-- NOTE: The media attribute specifies what media or device the linked document is optimized for. 
+  This attribute is used to specify that the target URL is designed for special devices (like iPhone), speech or print media.
+  This attribute can accept several values.
+  Only used if the href attribute is present. -->
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="logo-favicon.ico">
+  <title>NewsGrid | Latests News</title>
+</head>
+
+<body>
+  <nav id="main-nav">
+    <div class="container">
+      <img src="img/logo.png" alt="NewsGrid" class="logo">
+      <!-- Social media links/icons -->
+      <div class="social">
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+        <!-- The target attribute specifies where to open the linked document.
+        NOTE: A value of "_blank" opens the linked document in a new window or tab -->
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+        <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+      </div>
+      <ul>
+        <li><a href="index.html" class="current">Home</a></li>
+        <!-- NOTE: The "current" class stands for "the current webpage the user is on" and will be used to add a red background to the <a> tag corresponding to the current web page the user is on. Therefore, we added this class to the <a> above as it represents the "Home" button and the index.html file IS the home webpage, meaning that whenever the user accesses our home page, they are accessing our index.html file and therefore the "Home" button in our website should be highlighted, in this case in red (our primary color) to signify that we are currently viewing the homepage. -->
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Showcase -->
+  <header id="showcase">
+    <div class="container">
+      <!-- The container class will be used to add some padding around the div along with other styles to make the website look better -->
+      <!-- QUESTION: Not sure we we didn't include this class in the header tag and deleted this div -->
+      <div class="showcase-container">
+        <div class="showcase-content">
+          <div class="category category-sports">Sports</div>
+          <h1>Some Sports Article</h1>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam similique tenetur non veniam ea maiores
+            dolore fuga, delectus aliquam dolor adipisci vel est et! Dignissimos officia delectus exercitationem porro
+            modi!</p>
+          <a href="article.html" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Home Articles -->
+  <section id="home-articles" class="py-2">
+    <div class="container">
+      <!-- QUESTION: Not sure we we didn't include this class in the section tag and deleted this div -->
+      <h2>Editor Picks</h2>
+      <div class="articles-container">
+        <!-- This div will be a Grid container -->
+        <article class="card">
+          <!-- TIP: "cards" are used to put content or images inside them, that way your content doesn't appear to just float in your website (see the utulities section in style.css for more info) -->
+          <img src="img/articles/ent1.jpg" alt="">
+          <!-- This img will be a Grid item -->
+          <div>
+            <!-- This div will serve as a Grid container, making it a Grid within a Grid -->
+            <div class="category category-ent">Entertainment</div>
+            <h3>
+              <a href="article.html">Lorem ipsum dolor sit amet.</a>
+            </h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aliquam ratione facere fugiat harum
+              temporibus quam obcaecati id illo error.</p>
+          </div>
+        </article>
+        <article class="card bg-dark">
+          <div class="category category-sports">Sports</div>
+          <h3>
+            <a href="article.html">Lorem ipsum dolor sit amet.</a>
+          </h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aliquam ratione facere fugiat harum
+            temporibus quam obcaecati id illo error.</p>
+        </article>
+        <article class="card">
+          <img src="img/articles/tech1.jpg" alt="">
+          <div class="category category-tech">Technology</div>
+          <h3>
+            <a href="article.html">Lorem ipsum dolor sit amet.</a>
+          </h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aliquam ratione facere fugiat harum
+            temporibus quam obcaecati id illo error.</p>
+        </article>
+        <article class="card">
+          <div class="category category-sports">Sports</div>
+          <h3>
+            <a href="article.html">Lorem ipsum dolor sit amet.</a>
+          </h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aliquam ratione facere fugiat harum
+            temporibus quam obcaecati id illo error.</p>
+          <img src="img/articles/sports1.jpg" alt="">
+        </article>
+        <article class="card">
+          <img src="img/articles/tech2.jpg" alt="">
+          <div class="category category-tech">Technology</div>
+          <h3>
+            <a href="article.html">Lorem ipsum dolor sit amet.</a>
+          </h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aliquam ratione facere fugiat harum
+            temporibus quam obcaecati id illo error.</p>
+        </article>
+        <article class="card bg-primary">
+          <div class="category category-sports">Sports</div>
+          <h3>
+            <a href="article.html">Lorem ipsum dolor sit amet.</a>
+          </h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aliquam ratione facere fugiat harum
+            temporibus quam obcaecati id illo error.</p>
+        </article>
+        <article class="card">
+          <!-- This "card" will be a Grid container -->
+          <div>
+            <!-- This div will be a Grid container as well, so it'll be a Grid within a Grid -->
+            <div class="category category-ent">Entertainment</div>
+            <h3>
+              <a href="article.html">Lorem ipsum dolor sit amet.</a>
+            </h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis aliquam ratione facere fugiat harum
+              temporibus quam obcaecati id illo error.</p>
+          </div>
+          <img src="img/articles/ent2.jpg" alt="">
+          <!-- This img will be a Grid item -->
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer id="main-footer" class="py-2">
+    <div class="container footer-container">
+      <!-- The .container utility class moves everything to the middle and adds some padding -->
+      <!-- The footer-container will be the actual grid container for the footer -->
+      <!-- We'll have 5 div's, and will use CSS Grid to repeat 4 columns, 1 column for the first 4 divs, and span the last div across all 4 columns in the second row -->
+      <div>
+        <img src="img/logo_light.png" alt="NewsGrid">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil, placeat provident! Velit at iste sint
+          voluptates est laudantium praesentium dolore!</p>
+      </div>
+      <div>
+        <h3>Email Newsletter</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+        <form>
+          <input type="email" placeholder="Enter Email...">
+          <input type="submit" value="Subscribe" class="btn btn-primary">
+        </form>
+      </div>
+      <div>
+        <h3>Site Links</h3>
+        <ul class="list">
+          <li><a href="#">Help & Support</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Join Our Club</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, nulla.</p>
+        <a href="#" class="btn btn-secondary">Join Now</a>
+      </div>
+      <div>
+        <p>Copyright &copy; 2019, All Rights Reserved</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

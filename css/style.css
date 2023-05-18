@@ -1,0 +1,435 @@
+/* Variables */
+:root {
+  --primary-color: #c72727;
+  --secondary-color: #f99500;
+  --light-color: #f3f3f3;
+  --dark-color: #333;
+  --max-width: 1100px;
+}
+
+.category {
+  --sports-color: #f99500;
+  --ent-color: #a66bbe;
+  --tech-color: #009cff;
+}
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Styles */
+body {
+  font-family: "Lato", sans-serif;
+  line-height: 1.5;
+  background-color: var(--light-color);
+}
+
+a {
+  /* NOTE: The following will change the color of our social media icons as they exist inside an a tag */
+  color: var(--dark-color);
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  /* We want our images to always be 100% of their container since images will stretch by default beyond their containers */
+  width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Staatliches", cursive;
+  margin-bottom: 0.55rem;
+  line-height: 1.3;
+}
+
+p {
+  margin: 0.5rem 0;
+}
+
+/* Utilities */
+.container {
+  max-width: var(--max-width);
+  /* Q: why max-width? */
+  margin: auto;
+  /* Centers container horizontally */
+  padding: 0 2rem;
+  /* Adds space between the container and the left and right sides of the viewport */
+  overflow: hidden;
+  /* QUESTION: Why ? 
+  Brad says to always show the content within the container.
+  A: It seems to prevent the content from overflowing, it seems like the content is clipped */
+}
+
+.category {
+  display: inline-block;
+  /* takes up only the width it needs */
+  color: #fff;
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  padding: 0.4rem 0.6rem;
+  border-radius: 15px;
+  margin-bottom: 0.5rem;
+}
+
+.category-sports {
+  background-color: var(--sports-color);
+}
+.category-ent {
+  background-color: var(--ent-color);
+}
+.category-tech {
+  background-color: var(--tech-color);
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  background-color: var(--dark-color);
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+}
+
+.btn-light {
+  background-color: var(--light-color);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.card {
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.bg-dark {
+  background-color: var(--dark-color);
+  color: #fff;
+}
+.bg-primary {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+.bg-secondary {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+/* IMPORTANT: When you apply a CSS rule to a parent element like a div that contains child elements such as a tags, the CSS rule will apply to the parent element and NOT necessarily to the child elements. The following makes sure the text inside our articles change to white whenever we assign any of the background classes above to the <article> div's. NOTE: From my experience, heading tags and p tags typically change their color according to the color set for the parent div. The problem lies with a tags, as there tends to be a need for greater selector specificity for the a tags to change color. Brad included all of the selectors below, but I commented out the headings because I don't think we need them. */
+/* .bg-dark h1,
+.bg-dark h2,
+.bg-dark h3, */
+.bg-dark a,
+/* .bg-primary h1,
+.bg-primary h2,
+.bg-primary h3, */
+.bg-primary a,
+/* .bg-secondary h1,
+.bg-secondary h2,
+.bg-secondary h3, */
+.bg-secondary a {
+  color: inherit;
+  /* IMPORTANT: Brad set the color above to #fff, but it's better to use inherit when that's the purpose for specifying the color of a child element: to inherit the color of its parent div. inherit prevents inconsistencies in your styling */
+}
+/* .py-# classes are for top and bottom padding only (I believe Brad adds a y to signify the y-axis) */
+/* .p-# classes have all-around padding */
+.py-1 {
+  padding: 1.5rem 0;
+}
+.py-2 {
+  padding: 2rem 0;
+}
+.py-3 {
+  padding: 3rem 0;
+}
+.p-1 {
+  padding: 1.5rem;
+}
+.p-2 {
+  padding: 2rem;
+}
+.p-3 {
+  padding: 3rem;
+}
+
+.l-heading {
+  font-size: 3rem;
+}
+
+.list li {
+  padding: 0.5rem 0;
+  border-bottom: #555 dotted 1px;
+  width: 90%;
+}
+
+.list li a:hover {
+  color: var(--primary-color) !important;
+}
+
+.page-container {
+  /* Grid container for inner pages*/
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+  /* Our grid container only has two columns, the first for the main content on the left (5fr) and the second for the aside on the right (2fr) */
+  /* SIDE NOTE: I think it would be cool to make the "Join Our Club" button a sticky so it can always be visible to the users as they scroll down to read the artcile in about.html */
+  margin: 2rem 0;
+  gap: 1.5rem;
+  /* adds some space between our grid items (the article and aside) */
+}
+
+.page-container > *:first-child {
+  /* this targets the first child of the element with a class of .page-container. In most cases for our website, the first child will be the <article> div */
+  grid-row: 1 / span 3;
+  /* This created three rows for the <article> div, which was previously in only one row. Therefore, this ALSO created three rows in our Grid as we only had one before. This means that the <aside> div on the right will now only take up the first grid row. */
+}
+
+/* Navigation (navbar) */
+#main-nav {
+  background-color: #fff;
+  position: sticky;
+  /* The element is positioned according to the NORMAL flow of the document, and then offset relative to its nearest scrolling ancestor and containing block (nearest block-level ancestor), including table-related elements, based on the values of top, right, bottom, and left. The offset does not affect the position of any other elements. */
+  /* IMPORTANT: We decided to use sticky instead of fixed because position:fixed; takes the element out of the normal flow as it's position relative to the viewport. Fixed would make the navbar cover part of the showcase image. Sticky behaves like a regular element until it reaches the defined offset and then becomes fixed (check Q/A comment on L98) */
+  top: 0;
+  /* QUESTION: Why? */
+  z-index: 2;
+  /* This places the navbar on a higher z-index and therefore will be displayed on top of other elements */
+}
+
+/* IMPORTANT: We want to display the navbar as a Grid, to do that, we must first identify which element we need to set display: grid; to. Since .container is the only direct child of #main-nav, then setting display: grid; in the #main-nav will make .container the only grid item. Therefore, we must set display:grid in the .container to make its children (img, the .social div, and ul) grid items */
+
+#main-nav .container {
+  display: grid;
+  /* makes the img, the .social div, and ul grid items (read "important" above)*/
+  grid-template-columns: 6fr 3fr 2fr;
+  /* The first value specifies the size of the first grid item, in this case the img which contains the logo. The second specifies the size of the .social which contians the social media icons. The thirs specifies the size of the ul which contains the Home and About links */
+  padding: 1rem;
+  /* adds padding around the Grid */
+  align-items: center;
+  /* centers the grid items (.log, .social, ul) vertically (at the center of the y-axis) */
+}
+
+/* At this point, our logo was way too big due to setting width: 100%; for the img elements in our Base Styles section. 
+So let's make our logo smaller */
+#main-nav .logo {
+  /* the above can be replaced with #main-nav img and the results would be the same as .logo is simply the class of the img element inside #main-nav. TIP: Technically, we can simply write .logo above, but writing #main-nav .logo reminds us where the .logo is located at (inside the #main-nav)  */
+  width: 180px;
+  /* makes the .logo smaller */
+}
+
+#main-nav ul {
+  justify-self: end;
+  /* The justify-self property aligns a grid item within its grid cell in the inline direction.
+  A value of "end" will flush the grid item toward the end edge of the alignment container in the inline direction. */
+  display: flex;
+  /* displays the li's (Home and About) as flex items, aligning them horizontally by defaut */
+}
+
+#main-nav ul li a {
+  padding: 0.75rem;
+  /* adds some space between the a tags  */
+  font-weight: bold;
+}
+
+#main-nav ul li a.current {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+#main-nav ul li a:hover {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+#main-nav .social {
+  justify-self: center;
+}
+
+#main-nav .social i {
+  color: #777;
+  margin-right: 0.5rem;
+}
+
+/* Showcase */
+#showcase {
+  color: #fff;
+  padding: 2rem;
+  /* Overlay */
+  background-color: var(--dark-color);
+  /* see below */
+  position: relative;
+  /* We will use the ::before pseudo selector to add our background image. We want the background-color in #showcase to serve as the overlay. To achive this, we must set the ::before pseudo selector to position: absolute; and our #showcase must be position: relative;, since an element with position absolute is positioned inside its first relative container */
+}
+
+#showcase::before {
+  /* QUESTION: not sure why using ::after instead of ::before makes no changes to our overlay */
+  content: "";
+  background: url(../img/featured.jpg) no-repeat center center/cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  /* REVIEW: makes the background image transparent, allowing us to see the background-color which creates the impression of an overlay, when in reality the image is the one on top ( think, it might be below the background-color)*/
+}
+
+/* 
+TIP: Better ways to add an overlay: 
+First, delete the #showcase::before styling above
+Second, delete the background-color and position:relative; in #showcase 
+Third, insert either of the styling below in the #showcase section
+Method 1:
+background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('../img/featured.jpg') no-repeat center center/cover ;
+Method 2: 
+background: url(../img/featured.jpg) no-repeat center center/cover;
+box-shadow: inset 0px 0px 0px 100vh rgba(0, 0, 0, 0.4);
+*/
+/* inset | offset-x | offset-y | blur-radius | spread-radius | color */
+
+#showcase .showcase-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+#showcase .showcase-container .showcase-content {
+  z-index: 1;
+  /* places the showcase-content (h1, p) above the background image */
+}
+
+#showcase .showcase-container .showcase-content p {
+  margin-bottom: 1rem;
+  /* adds some space between the btn and the p */
+}
+
+/* Home Articles */
+#home-articles .articles-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
+/* We want the first <article> to span across two columns, as we plan to place the image to the left of the text, taking up the entire first column. */
+#home-articles .articles-container > *:first-child {
+  /* TIP: The selector could've been the following #home-articles .articles-container article:first-child, but we decided to be a bit more flexible. That's why we used > *:first-child, meaning that we are targeting any element that is a direct child of .articles-container and it's also a first-child (The :first-child CSS pseudo-class represents the first element among a group of sibling elements) SIDE NOTE: We used >*: again in the Footer section for the same purpose */
+  display: grid;
+  /* A grid within a grid. We want to set two columns for this grid so that the text and the image can be next to each other horizontally */
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  /* NOTE: Apparently grid-gap was replaced by gap.
+  https://teamtreehouse.com/community/grid-gap-properties-obsolete */
+  align-items: center;
+  grid-column: 1 / span 2;
+  /* Our grid item will start at column 1 and span the width of 2 columns */
+}
+/* We want the last <article> to span across two columns, as we plan to place the text to the left of the image, taking up the entire first column. */
+#home-articles .articles-container > *:last-child {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  align-items: center;
+  grid-column: 2 / span 2;
+  /* Our grid item will start at column 2 and span the width of 2 columns */
+}
+
+/* Articles */
+#article .meta {
+  /* targets our metadata like date, author, etc. related to our articles */
+  /* TIP: CSS Grid is great to create the general layout of your website, but Flex can shine brighter when dealing with inner elements, specially when styling things in just one line (row or column) like a navbar */
+  display: flex;
+  justify-content: space-between;
+  /* space-between distribute items evenly (with the first item on the start line and the last item on the end line) */
+  align-items: center;
+  /* centers flex items horizontally */
+  background-color: #eee;
+  padding: 0.5rem;
+}
+
+#article .meta .category {
+  margin: 0;
+  /* resets the margin-bottom we had added to the .category styling in the utilities section. Resetting the margin allows us to vertically center the .category */
+}
+
+/* Footer */
+#main-footer {
+  background-color: var(--dark-color);
+  color: #fff;
+}
+
+#main-footer img {
+  width: 150px;
+}
+
+#main-footer a {
+  color: inherit;
+}
+
+#main-footer .footer-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+#main-footer .footer-container > *:last-child {
+  background-color: #444;
+  grid-column: 1 / span 4;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+#main-footer .footer-container input[type="email"] {
+  width: 90%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#main-footer .footer-container input[type="submit"] {
+  width: 90%;
+}
+
+/* SIDE NOTE: The following is a brief example/lesson/reminder of the impact of the order of precedence in CSS */
+/* #main-footer .list li a:hover {
+  color: var(--primary-color);
+} */
+/* The CSS above only makes the <a> tags in our footer change color when in a hover state. In our article.html file we'll be using this styling too, so it's better to make the styling applicable to any element with a class of .list with an li and an a tag to follow the DRY principle. We do that with the following CSS, which can be found in the utilities section. */
+/* .list li a:hover {
+  color: var(--primary-color) !important;
+} */
+/* IMPORTANT: The reason why we need to specify !important is because the styling below (which can be found above)...
+#main-footer a {
+  color: inherit;
+}
+has a higher level of precedence over the styling below without the !important. This is because of the #main-footer id. Even though a:hover is more specific than just a, #main-footer a is more specific than a:hover and therefore it's styling has precendence over the styling below.
+*/
+/* .list li a:hover {
+  color: var(--primary-color);
+} */
+/* To make the styling above have the highest level of precedence we just need to add the !important */

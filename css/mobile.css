@@ -1,0 +1,67 @@
+/* Navigation (for smartphones and tablets)*/
+#main-nav .social {
+  display: none;
+}
+
+#main-nav .container {
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+  justify-content: center;
+  /* Q: not sure why the property above does not center the grid items horizontally.
+  A: In flex layout, the justify-content property distributes free space in the container between or around flex items. 
+  In grid layout, the justify-content property distributes free space in the container between or around grid columns.
+  IMPORTANT: Therefore, justify-content aligns grid columns, NOT grid items. This is why we must use justify-self on the grid item we want to center horizontally (see below) */
+}
+
+#main-nav .logo,
+#main-nav ul {
+  justify-self: center;
+  /* Horizontally centers the .logo and ul */
+}
+
+#main-nav ul li a {
+  padding: 0.5rem;
+  /* Makes padding a bit smaller */
+}
+
+/* Home articles (tablet) */
+#home-articles .articles-container {
+  grid-template-columns: repeat(2, 1fr);
+  /* We only want 2 columns for tablets instead of 3 */
+}
+
+/* IMPORTANT: We need to get rid of the spans so that the first and last articles have the image and the text aligned vertically and not horizontally. This also allows us to achieve having only 2 columns in our grid, as the span messes up the number of columns */
+#home-articles .articles-container > *:first-child,
+#home-articles .articles-container > *:last-child {
+  grid-template-columns: 1fr;
+  grid-column: 1;
+}
+
+/* Staking grid items (mobile) */
+@media (max-width: 600px) {
+  #showcase .showcase-container,
+  #home-articles .articles-container,
+  #main-footer .footer-container {
+    grid-template-columns: 1fr;
+  }
+  #main-footer .footer-container > *:last-child {
+    /* IMPORTANT: We need to get rid of the spans to achieve having only 1 column in our grid, as the span messes up the number of columns */
+    grid-column: 1;
+  }
+  #main-footer .footer-container > *:first-child,
+  #main-footer .footer-container > *:nth-child(2) {
+    border-bottom: #444 dotted 1px;
+    padding-bottom: 1rem;
+  }
+  .page-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .page-container > *:first-child {
+    grid-row: 1;
+    /* TIP: This doesn't really affect our display but Brad thinks it's best to always eliminate any spans when we only want one column or row in our grid */
+  }
+  .l-heading {
+    font-size: 2rem;
+  }
+}
